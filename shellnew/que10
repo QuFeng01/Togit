@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#count=0
+for name in $(find . -type f -perm -111)
+do
+	data=`cat $name`
+	flag=${data:1:3}
+	if [ $flag = "ELF" ]
+	then
+		ls -l $name
+	fi
+	#echo $name
+done
+#echo $name
+
+#data=`cat $name`
+#flag= ${data:1:3}
+#echo $flag
+

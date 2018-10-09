@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo -n "Input Figure: "
+
+read input
+
+
+if [ $input -lt 0 ]
+then
+	input=$((-$input))
+fi
+
+num=2
+temp=`expr $num \* $num`
+while [  $temp -le $input ]
+do
+	rem=`expr $input \% $num`
+	if [ $rem -eq 0 ]
+	then
+		echo -n "$num * "
+		input=`expr $input \/ $num`
+	elif [ $rem -ne 0 ]
+	then
+		num=`expr $num + 1`
+		temp=`expr $num \* $num`
+	fi
+done
+
+echo $input
+

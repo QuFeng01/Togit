@@ -1,0 +1,18 @@
+#!/bin/bash
+
+count=0
+fileCount=0
+list=`cat $1`
+for val in $list
+do
+	if [ `expr $count \% 5` -eq 0 ]
+	then
+		fileCount=`expr $fileCount + 1`
+		fileName="file"$fileCount""
+	fi
+	
+	touch $fileName
+	echo $val>>./$fileName
+	count=`expr $count + 1`
+done
+

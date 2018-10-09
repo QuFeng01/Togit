@@ -1,0 +1,15 @@
+#!/bin/bash
+
+paraNum=$#
+
+sum=0
+aSum=0
+
+for(( i = 1; i <= paraNum; i++))
+do
+	sum=`expr ${i} \* ${i}`
+	echo "sum = $sum"
+	aSum=`expr $aSum + $sum`
+done
+
+echo "aSum = $aSum"

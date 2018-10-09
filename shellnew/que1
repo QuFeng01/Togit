@@ -1,0 +1,62 @@
+#!/bin/bash
+#Translating character to upper or lower
+
+t_Opt=0;
+e_Flag=0;
+
+echo -n "Enter option type : "
+read iType
+
+
+if [ "$iType" = "exit" ]
+then
+	e_Flag=1;
+elif [ "$iType" = "quit" ]
+then
+	e_Flag=1;
+fi
+
+while [ $e_Flag -ne 1 ]
+do
+	if [ -z $iType ]
+	then
+		t_Opt=0;
+	fi
+
+	if [ "$iType" = "upper" ]
+	then
+		t_Opt=1;
+	fi
+	
+	echo -n "Input : "
+	read input
+	outpt=""
+	
+
+
+	if [ $t_Opt -eq 0 ]
+	then
+		declare -l output
+	elif [ $t_Opt -eq 1 ]
+	then
+		declare -u output
+	fi
+	output=$input
+	echo $output
+	output=$(echo $output | tr -d ' ')
+	bLength=${#output}
+	echo $bLength
+	
+
+	echo -n "Enter option type : "
+	read iType
+
+	if [ "$iType" = "exit" ]
+	then
+		e_Flag=1;
+	elif [ "$iType" = "quit" ]
+	then
+		e_Flag=1;
+	fi
+	t_Opt=0;
+done

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+str="dahs dahio"
+echo ${#str}
+str=$(echo $str | tr -d ' ')
+echo ${#str}
+
+:<<!
+paraNum=$#
+echo $paraNum
+
+sum=0;
+aSum=0;
+for((i = 1; i <= paraNum; i++ ))
+do
+	echo `expr ${i} \* ${i}`
+done
+!
+
+#echo -n "Input num : "
+#read input
+
+#output=`expr $input + 1`
+#echo "$output"
+
+:<<!
+cd $HOME/
+for(( num = 6; num <= 11; num++ ))
+do
+	fileName="que"$num""
+	touch $fileName
+	chmod u+x $fileName
+done
+!

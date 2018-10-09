@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cd $HOME/
+for(( num = 1; num <= 50; num++ ))
+do
+	fileName="user"$num""
+	mkdir $fileName
+	chmod 754 $fileName
+done
+
+cd -
+
+:<<EOF
+for(( num = 1; num <= 50; num++))
+do
+	fileName="user"$num""
+	rm -r $fileName
+done
+EOF

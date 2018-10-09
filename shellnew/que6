@@ -1,0 +1,10 @@
+#!/bin/bash
+
+count=-2
+for val in [ `find . -name '*.txt' -size 0` ]
+do
+	count=`expr $count + 1`
+done
+echo $count
+
+find . -name '*.txt' -size 0 -exec rm -f {} \;

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+fileName="linefile"
+rm $fileName
+countLine=0
+for name in $(find $1 -name '*.c' -or -name '*.h')
+do
+	linestr=`wc -w $name`
+	echo $linestr>>./$fileName
+	
+	line=${linestr%" "*}
+	countLine=`expr $countLine + $line`
+done
+
+echo $countLine>>./$fileName

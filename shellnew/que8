@@ -1,0 +1,5 @@
+#!/bin/bash
+
+name=`find . -perm 777`
+echo "Dangerous : $name"
+chmod 754 $name

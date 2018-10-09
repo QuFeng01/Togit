@@ -1,0 +1,14 @@
+#!/bin/bash
+
+time=`date`
+mon=${time:4:3}
+day=${time:8:2}
+hour=${time:11:2}
+min=${time:14:2}
+#fileName="${day}${hour}${min}.tar.gz"
+
+fileName="`date +%Y%m%d%H%M`.tar.gz"
+tar -cf /home/wangzw/Test/$fileName /etc
+
+path="/home/wangzw/Test"
+find $path -mmin +7 -name '*.tar.gz' -exec rm -f {} \;
