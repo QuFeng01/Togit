@@ -5,6 +5,7 @@ demo.o : demo.c
 	gcc -c demo.c
 gdllib.o : gdllib.c gdllib.h
 	gcc -c gdllib.c
-#clean后面   为目标
+
+.PHONY : clean
 clean :
-	rm $(objs)
+	rm $(objs) dllib

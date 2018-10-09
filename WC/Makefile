@@ -9,4 +9,4 @@ wordcount.o : wordcount.c
 
 .PHONY : clean
 clean:
-	-rm $(objs)
+	-rm $(objs) wordcount
